@@ -10,15 +10,41 @@
   <script>
     const spec = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Cost of Living in 2017",
+  "title": "Global Cost of Living 2017",
   "width": 800,
   "height": 400,
-  "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
-  "transform": [
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    {
+      "transform": [
     {
       "lookup": "properties.NAME",
       "from": {
@@ -31,7 +57,7 @@
     },
     {"calculate": "datum.CoL+1", "as": "Cost of Living"}
   ],
-  "mark": {"type": "geoshape"},
+      "mark": {"type": "geoshape", "stroke": "grey"},
   "encoding": {
     "color": {
       "field": "Cost of Living",
@@ -42,7 +68,10 @@
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
       {"field": "Cost of Living", "type": "quantitative"}
     ]
-  }
+      }
+    }
+  ],
+  "config": {}
 };
     vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
   </script>
