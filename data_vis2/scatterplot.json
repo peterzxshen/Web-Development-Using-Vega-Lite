@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Customer Ratings by Type",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
+  },
+  "params": [
+    {
+      "name": "Wine_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Red", "Rose", "Sparkling", "White"],
+        "labels": ["Show All", "Red", "Rose", "Sparkling", "White"],
+        "name": "Wine Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Wine_selection == null || datum.Type == Wine_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Rating",
+      "axis": {"tickCount": 10},
+      "type": "quantitative",
+      "scale": {"type": "log", "domain": [2.5, 5]}
+    },
+    "y": {
+      "field": "Price",
+      "type": "quantitative",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "log", "domain": [3, 1000]}
+    }
+  },
+  "layer": [
+    {
+      "mark": "point",
+      "encoding": {
+        "color": {
+          "field": "Type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Red", "Rose", "Sparkling", "White"],
+            "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3"]
+          }
+        },
+        "opacity": {"value": 0.6},
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Rating", "type": "quantitative"},
+          {"field": "Price", "type": "quantitative"},
+          {"field": "Type", "type": "nominal"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": 15,
+        "dy": 10,
+        "fontSize": 9,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Name", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Name'] == 'Veneto Bianco 2017' || datum['Name'] == 'Pomerol 1999'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Rating", "type": "quantitative"},
+          {"field": "Price", "type": "quantitative"},
+          {"field": "Type", "type": "nominal"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
