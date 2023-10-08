@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Visualizations</title>
+</head>
+<body>
+    <div id="visualization1"></div>
+    <div id="visualization2"></div>
+
+    <!-- Include Vega and Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+
+    <!-- Include Vega-Embed for rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <script>
+        // Load and render the first visualization
+        vegaEmbed('#visualization1', 'https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/scatterplot.json')
+            .then(function (res) {
+                // Handle success if needed
+            })
+            .catch(function (err) {
+                console.error(err);
+            });
+
+        // Load and render the second visualization
+        vegaEmbed('#visualization2', 'https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/geomap.json')
+            .then(function (res) {
+                // Handle success if needed
+            })
+            .catch(function (err) {
+                console.error(err);
+            });
+    </script>
+</body>
+</html>
