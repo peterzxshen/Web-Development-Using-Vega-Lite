@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Wine Variation Reviews per Country",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
+  },
+  "transform": [
+    {"filter": "datum.Country != null"},
+    {
+      "aggregate": [{"op": "count", "as": "TotalWineCount"}],
+      "groupby": ["Country"]
+    },
+    {
+      "calculate": "datum.TotalWineCount > 30 ? datum.Country : 'Other'",
+      "as": "CountryGroup"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "TotalWineCount", "as": "TotalWineCount"}
+      ],
+      "groupby": ["CountryGroup"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "CountryGroup", "type": "ordinal", "title": ""},
+    "y": {
+      "field": "TotalWineCount",
+      "type": "quantitative",
+      "title": "Wine Variations (including year)"
+    },
+    "tooltip": [
+      {"field": "CountryGroup", "type": "nominal", "title": "Country"},
+      {"field": "TotalWineCount", "type": "nominal", "title": "Total Count"}
+    ]
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}
