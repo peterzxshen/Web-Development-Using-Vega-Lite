@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Wine Ratings Over the Years",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
+  },
+  "transform": [{"filter": "datum.Year > 2000"}],
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+    "y": {
+      "aggregate": "average",
+      "field": "Rating",
+      "type": "quantitative",
+      "title": "Average Rating",
+      "axis": {"tickCount": 4},
+      "scale": {"domain": [3, 5]}
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "title": "Wine Type",
+      "scale": {
+        "domain": ["Red", "Rose", "Sparkling", "White"],
+        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3"]
+      }
+    },
+    "tooltip": [
+      {"field": "Type", "title": "Wine Type"},
+      {"field": "Year", "title": "Year", "type": "quantitative"},
+      {
+        "aggregate": "average",
+        "field": "Rating",
+        "title": "Average Rating",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "mark": {"type": "line", "point": true},
+  "config": {}
+}
