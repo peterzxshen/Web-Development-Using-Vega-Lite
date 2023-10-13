@@ -18,12 +18,13 @@
     }
   ],
   "transform": [
-    {"filter": "Wine_selection == null || datum.Type == Wine_selection"}
+    {"filter": "Wine_selection == null || datum.Type == Wine_selection"},
+    {"filter": "datum.Price < 100"} 
   ],
   "encoding": {
     "x": {
       "field": "Rating",
-      "axis": {"tickCount": 10},
+      "axis": {"tickCount": 5},
       "type": "quantitative",
       "scale": {"type": "log", "domain": [2.5, 5]}
     },
@@ -31,7 +32,7 @@
       "field": "Price",
       "type": "quantitative",
       "axis": {"tickCount": 6},
-      "scale": {"type": "log", "domain": [3, 1000]}
+      "scale": {"domain": [3, 100]}
     }
   },
   "layer": [
@@ -60,9 +61,9 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": 15,
+        "dx": -100,
         "dy": 10,
-        "fontSize": 9,
+        "fontSize": 12,
         "fontStyle": "italic"
       },
       "encoding": {
@@ -70,7 +71,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Name'] == 'Veneto Bianco 2017' || datum['Name'] == 'Pomerol 1999'",
+            "test": "datum['Name'] == 'Assemblage Brut Champagne 2009' || datum['Name'] == 'Meursault-Charmes Premier Cru 2015'",
             "value": 1
           },
           "value": 0
