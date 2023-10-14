@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Review Popularity by Wine Type",
+  "width": 500,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Type", "type": "nominal", "title": ""},
+    "y": {
+      "field": "NumberOfRatings",
+      "type": "quantitative",
+      "title": "Number of Reviews"
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "title": "Wine Type",
+      "scale": {
+        "domain": ["Red", "Rose", "Sparkling", "White"],
+        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3"]
+      }
+    },
+    "tooltip": [
+      {"field": "Name", "title": "Wine"},
+      {"field": "Type", "title": "Wine Type"},
+      {
+        "field": "NumberOfRatings",
+        "title": "Number of Reviews",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "config": {}
+}
