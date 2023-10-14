@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "title": "Most Used Words in Reviews",
   "description": "Word Cloud",
   "width": 400,
   "height": 400,
