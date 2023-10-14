@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Wine Review Evaluation</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consistent Size Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1000px; /* Set a fixed width for the page content */
+            margin: 0 auto; /* Center the content horizontally */
+            /* background-color: #f0f0f0; */
+            background-image: url("https://github.com/peterzxshen/FIT3179/blob/main/data_vis2/winebackground.png?raw=true");
+            background-size: cover; /* Adjust to 'contain', '100% auto', or other values as needed */
+            background-repeat: repeat;
+            background-attachment: fixed; /* This ensures the image stays in the background */
+            background-position: center center;
+        }
+        section{
+            margin: 10px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        header {
+            text-align: center; /* Center the content horizontally */
+            margin: 10px;
+            padding: 0px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+        }
+        .vis-container {
+            margin-left: 50px; /* Adjust the left margin to move the image to the right */
+        }
+        footer{
+          text-align: center;
+         
+          background-color: #f0f0f0;
+         
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1>Wine Review Evaluation</h1>
+        <p> Desc</p> 
+    </header>
+
+
+
+    <section>
+      <h2>Subheading</h2>
+        <h3>Content Section</h3>
+        <div>
+            <div id="vis1" class="vis-container"></div>
+          </div>
+       <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+       </p>
+       <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h3>Subheading</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="vis2"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+        <h2>Content Section</h2>
+        <div class="pure-g">
+            <div class="pure-u-3-4">
+              <div id="vis3"></div>
+            </div>
+            <div class="pure-u-1-4">
+              <div class="description description-right">
+                <h3>Content Section</h3>
+                <p>Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                  faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+              </div>
+            </div>
+      
+          </div>
+          <h2></h2>
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <div class="description description-left">
+                <h3>Content Section</h3>
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <div class="description description-left"></div>
+                        <p>Lorem ipsum dolor sit amet,
+                          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                          faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+                    </div>
+                    <div class="pure-u-1-2">
+                      <div class="description description-right">
+                        
+                        <p>Lorem ipsum dolor sit amet,
+                          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                          faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+                      </div>
+                    </div>
+              
+                  </div>
+              </div>
+            </div>
+            <div class="pure-u-1-2">
+              <div id="vis4"></div>
+            </div>
+          </div>
+    </section>
+
+    <section>
+        <h2>Content Section</h2>
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+              <h3>Subheading</h3>
+
+              <div id="vis6"></div>
+             
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapie Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapie </p>
+            </div>
+          
+          <div class="pure-u-1-2">
+            <h3>Subheading</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapien fauci Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapie Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapie Lorem 
+              </p>
+              
+            <p>
+                ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapiebus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+            <div id="vis5"></div>
+          </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>Created by Peter Shen 32507755</p>
+    </footer>
+
+
+    <script type="text/javascript">
+        var specVis1 = "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/geomap.json";
+        var specVis2 = "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/count_bar.json";
+        var specVis3 = "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/scatterplot.json";
+        var specVis4 = "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/line.json";
+        var specVis5 = "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/wordcloud.json";
+        var specVis6 = "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/review_bar.json";
+
+    
+        vegaEmbed('#vis1', specVis1, { "actions": false });
+    
+        vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    
+        vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    
+        vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      </script>    
+</body>
+</html>
