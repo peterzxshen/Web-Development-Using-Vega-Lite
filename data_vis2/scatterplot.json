@@ -61,9 +61,9 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -50,
+        "dx": -7,
         "dy": 0,
-        "fontSize": 12,
+        "fontSize": 13,
         "fontStyle": "italic"
       },
       "encoding": {
