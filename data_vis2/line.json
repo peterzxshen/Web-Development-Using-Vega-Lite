@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Wine Ratings Over the Years",
-  "width": 350,
-  "height": 300,
+  "width": 500,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
   },
@@ -38,9 +38,47 @@
       {"aggregate": "average", "field": "Rating", "title": "Average Rating", "type": "quantitative"}
     ]
   },
-  "mark": {
-    "type": "line",
-    "point": false
-  },
-  "config": {"background": "transparent"}
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": false
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": 0
+      },
+      "encoding": {
+        "text": {"value": "Minimum Rating: 3.2"}, 
+        "x": {"value": 140}, 
+        "y": {"value": 470}, 
+        "color": {"value": "black"} 
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": 0
+      },
+      "encoding": {
+        "text": {"value": "Maximum Rating: 4.6"}, 
+        "x": {"value": 5}, 
+        "y": {"value": 85}, 
+        "color": {"value": "black"} 
+      }
+    }
+  ],
+  "config": {}
 }
