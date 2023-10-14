@@ -71,7 +71,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Name'] == 'Montserre Chablis 2017' || datum['Name'] == 'Franciacorta Satèn 2011'",
+            "test": "datum['Name'] == 'Cabochon Brut 2008' || datum['Name'] == 'Veneto Bianco 2017' || datum['Name'] == 'Bandol Rosé 2016' ",
             "value": 1
           },
           "value": 0
