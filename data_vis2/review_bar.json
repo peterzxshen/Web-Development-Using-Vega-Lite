@@ -6,7 +6,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
   },
-  "mark": "bar",
+  
   "encoding": {
     "x": {
       "field": "Type",
@@ -17,7 +17,14 @@
       "field": "NumberOfRatings",
       "type": "quantitative",
       "title": "Number of Reviews"
+    }
     },
+
+    "layer": [
+      {
+    "mark": "bar",
+    "encoding":{
+
     "color": {
       "field": "Type",
       "type": "nominal",
@@ -32,8 +39,33 @@
       {"field": "Name", "title": "Wine"},
       {"field": "Type", "title": "Wine Type"},
       {"field": "NumberOfRatings", "title": "Number of Reviews", "type": "quantitative"}
-      ]
+    ]
+    }
+    },
+
+    {
+      "mark": {
+      "type": "text",
+      "dx": 0,
+      "dy": -7,
+      "fontSize": 13},
+      
+      "encoding": {
+        "text": {
+          "aggregate": "sum",
+          "field": "NumberOfRatings",
+          "type": "quantitative"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "NumberOfRatings",
+          "type": "quantitative"
+        }
+      }
     
-  },
-   "config": {"background": "transparent"}
+  }
+  ],
+  "config": {
+    "background": "transparent"
+  }
 }
