@@ -57,5 +57,5 @@
       }
     }
   ],
-  "config": {}
+  "config": {"background": "transparent"}
 }
