@@ -34,6 +34,7 @@
     
   },
   "config": {
-    "view": {"stroke": "transparent", "background": "transparent"}
+    "view": {"stroke": "transparent"},
+    "background": "transparent"
   }
 }
