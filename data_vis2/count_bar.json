@@ -6,7 +6,19 @@
   "data": {
     "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"  
   },
+  "params": [
+    {
+      "name": "Wine_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Red", "Rose", "Sparkling", "White"],
+        "labels": ["Show All", "Red", "Rose", "Sparkling", "White"],
+        "name": "Wine Selection: "
+      }
+    }
+  ],
   "transform": [
+    {"filter": "Wine_selection == null || datum.Type == Wine_selection"},
     {
       "filter": "datum.Country != null"  
     },
@@ -15,7 +27,7 @@
       "groupby": ["Country"]
     },
     {
-      "calculate": "datum.TotalWineCount > 30 ? datum.Country : 'Other'",
+      "calculate": "datum.TotalWineCount > 25 ? datum.Country : 'Other'",
       "as": "CountryGroup"
     },
     {
