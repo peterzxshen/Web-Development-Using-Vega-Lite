@@ -72,7 +72,7 @@
       "transform": [
         {
           "type": "wordcloud",
-          "size": [500, 500],
+          "size": [400, 400],
           "text": {"field": "text"},
           "rotate": {"field": "datum.angle"},
           "font": "Helvetica Neue, Arial",
