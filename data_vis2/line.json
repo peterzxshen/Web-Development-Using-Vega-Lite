@@ -42,5 +42,5 @@
     "type": "line",
     "point": false
   },
-  "config": {}
+  "config": {"background": "transparent"}
 }
