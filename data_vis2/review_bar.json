@@ -34,6 +34,6 @@
       {"field": "NumberOfRatings", "title": "Number of Reviews", "type": "quantitative"}
       ]
     
-  }
+  },
    "config": {"background": "transparent"}
 }
