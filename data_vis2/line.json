@@ -57,8 +57,8 @@
       },
       "encoding": {
         "text": {"value": "Minimum Rating: 3.2"}, 
-        "x": {"value": 140}, 
-        "y": {"value": 470}, 
+        "x": {"value": 60}, 
+        "y": {"value": 370}, 
         "color": {"value": "black"} 
       }
     },
@@ -75,7 +75,7 @@
       "encoding": {
         "text": {"value": "Maximum Rating: 4.6"}, 
         "x": {"value": 5}, 
-        "y": {"value": 85}, 
+        "y": {"value": 70}, 
         "color": {"value": "black"} 
       }
     }
