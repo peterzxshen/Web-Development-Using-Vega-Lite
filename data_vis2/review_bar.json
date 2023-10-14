@@ -8,7 +8,11 @@
   },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "Type", "type": "nominal", "title": ""},
+    "x": {
+      "field": "Type",
+      "type": "nominal",
+      "title": ""
+    },
     "y": {
       "field": "NumberOfRatings",
       "type": "quantitative",
@@ -22,18 +26,13 @@
       "scale": {
         "domain": ["Red", "Rose", "Sparkling", "White"],
         "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3"]
-      },
-    
+      }
     },
     "tooltip": [
       {"field": "Name", "title": "Wine"},
       {"field": "Type", "title": "Wine Type"},
-      {
-        "field": "NumberOfRatings",
-        "title": "Number of Reviews",
-        "type": "quantitative"
-      }
-    ]
-  },
-  "config": {}
+      {"field": "NumberOfRatings", "title": "Number of Reviews", "type": "quantitative"}
+      ]
+    
+  }
 }
