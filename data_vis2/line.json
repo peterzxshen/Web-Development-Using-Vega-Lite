@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Wine Ratings Over the Years",
-  "width": 500,
-  "height": 500,
+  "width": 400,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
   },
