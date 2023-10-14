@@ -85,5 +85,5 @@
       }
     }
   ],
-  "config": {}
+  "config": {"background": "transparent"}
 }
