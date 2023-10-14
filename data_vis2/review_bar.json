@@ -18,11 +18,12 @@
       "field": "Type",
       "type": "nominal",
       "title": "Wine Type",
+      "legend": null,
       "scale": {
         "domain": ["Red", "Rose", "Sparkling", "White"],
         "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3"]
       },
-    "legend": null
+    
     },
     "tooltip": [
       {"field": "Name", "title": "Wine"},
