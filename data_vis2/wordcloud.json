@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Word Cloud",
-  "width": 500,
+  "width": 450,
   "height": 500,
   "padding": 0,
   "data": [
@@ -71,7 +71,7 @@
       "transform": [
         {
           "type": "wordcloud",
-          "size": [450, 400],
+          "size": [450, 500],
           "text": {"field": "text"},
           "rotate": {"field": "datum.angle"},
           "font": "Helvetica Neue, Arial",
