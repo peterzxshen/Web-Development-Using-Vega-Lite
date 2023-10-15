@@ -62,8 +62,22 @@
           "type": "quantitative"
         }
       }
-    
-  }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dx": 0,
+        "dy": -25, 
+        "fontSize": 10,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"value": "Brut Champagne 2008"},
+        "x": {"value": 234},
+        "y": {"value": 60},
+        "color": {"value": "black"}
+      }
+    }
   ],
   "config": {
     "background": "transparent"
