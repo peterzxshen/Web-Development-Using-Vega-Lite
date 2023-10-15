@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Review Popularity by Wine Type",
   "width": 380,
   "height": 400,
   "data": {
