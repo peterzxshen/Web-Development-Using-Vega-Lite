@@ -35,7 +35,7 @@
     "tooltip": [
       {"field": "Type", "title": "Wine Type"},
       {"field": "Year", "title": "Year", "type": "quantitative"},
-      {"aggregate": "average", "field": "Rating", "title": "Average Rating", "type": "quantitative", "format": ".2f"} // Format to two decimal places
+      {"aggregate": "average", "field": "Rating", "title": "Average Rating", "type": "quantitative", "format": ".2f"} 
     ]
   },
   "layer": [
