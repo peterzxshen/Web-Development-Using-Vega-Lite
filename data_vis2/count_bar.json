@@ -4,7 +4,7 @@
   "width": 400,
   "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"  
+    "url": "https://raw.githubusercontent.com/peterzxshen/FIT3179/main/data_vis2/data2.csv"
   },
   "params": [
     {
@@ -20,10 +20,10 @@
   "transform": [
     {"filter": "Wine_selection == null || datum.Type == Wine_selection"},
     {
-      "filter": "datum.Country != null"  
+      "filter": "datum.Country != null"
     },
     {
-      "aggregate": [{"op": "count", "as": "TotalWineCount"}],
+      "aggregate": [{ "op": "count", "as": "TotalWineCount" }],
       "groupby": ["Country"]
     },
     {
@@ -31,22 +31,29 @@
       "as": "CountryGroup"
     },
     {
-      "aggregate": [{"op": "sum", "field": "TotalWineCount", "as": "TotalWineCount"}],
+      "aggregate": [{ "op": "sum", "field": "TotalWineCount", "as": "TotalWineCount" }],
       "groupby": ["CountryGroup"]
     }
   ],
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "color": "#8B0000" 
+  },
   "encoding": {
-    "x": {"field": "CountryGroup", "type": "ordinal", "title": ""},
-    "y": {"field": "TotalWineCount", "type": "quantitative", "title": "Wine Variations (including year)",   "axis": {"tickCount": 3}},
+    "x": { "field": "CountryGroup", "type": "ordinal", "title": "" },
+    "y": {
+      "field": "TotalWineCount",
+      "type": "quantitative",
+      "title": "Wine Variations (including year)",
+      "axis": { "tickCount": 3 }
+    },
     "tooltip": [
-{"field": "CountryGroup", "type": "nominal", "title": "Country"},
-          {"field": "TotalWineCount", "type": "nominal", "title": "Total Count"}
-        ]
-    
+      { "field": "CountryGroup", "type": "nominal", "title": "Country" },
+      { "field": "TotalWineCount", "type": "nominal", "title": "Total Count" }
+    ]
   },
   "config": {
-    "view": {"stroke": "transparent"},
+    "view": { "stroke": "transparent" },
     "background": "transparent"
   }
 }
